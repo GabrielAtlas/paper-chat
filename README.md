@@ -1,12 +1,9 @@
-![Paper Chat Logo](https://i.imgur.com/fxDpimH.png)
-The best way to communicate with your friends.
+# ![Paper Chat Logo](https://i.imgur.com/fxDpimH.png)
+
+Um simples projeto open-source para meu portfólio feito em [NextJS](https://nextjs.org/) e com [ChakraUI](https://chakra-ui.com/).
 
 ![Paper Chat Preview](https://i.imgur.com/RFfiwBu.png)
 ![Paper Chat Preview](https://i.imgur.com/pUc8GXO.png)
-
-# 💬 Paper Chat
-
-Um simples projeto open-source para meu portfólio feito em [NextJS](https://nextjs.org/) e com [ChakraUI](https://chakra-ui.com/).
 
 # 🌠 Features
 
