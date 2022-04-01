@@ -1,16 +1,16 @@
 import React from "react";
 
+import { signIn } from "next-auth/react";
+
 import { Box, Text } from "@chakra-ui/react";
 
 import Image from "next/image";
 
 const GoogleAuthButton: React.FC = () => {
-  function handleClick() {}
-
   return (
     <Box
       display="flex"
-      onClick={handleClick}
+      onClick={() => signIn("google")}
       w="400px"
       h="64px"
       bgColor="white"

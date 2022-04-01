@@ -1,20 +1,36 @@
 import NextAuth from "next-auth";
-import Providers from "next-auth/providers";
+
+import GoogleProvider from "next-auth/providers/google";
 
 export default NextAuth({
-  // Configure one or more authentication providers
   providers: [
-    Providers.Google({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
     }),
   ],
+  jwt: {
+    encryption: true,
+  },
+  secret: process.env.SECRET_KEY,
 
-  database: process.env.MONGODB_URI,
   callbacks: {
-    session: async (session, user) => {
-      session.id = user.id;
-      return Promise.resolve(session);
+    async session({ session, token }) {
+      session.user = token.user;
+      return session;
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        token.user = user;
+      }
+      return token;
     },
   },
 });

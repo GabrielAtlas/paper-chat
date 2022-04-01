@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Flex, SimpleGrid, Text, Heading } from "@chakra-ui/react";
+import { Box, Flex, Text, Heading } from "@chakra-ui/react";
 
 import Image from "next/image";
 import GoogleAuthButton from "../../Global/GoogleAuthButton";
@@ -8,7 +8,7 @@ import GoogleAuthButton from "../../Global/GoogleAuthButton";
 const Body: React.FC = () => {
   return (
     <Box h="600px">
-      <Flex flexDir="row" justify="space-between">
+      <Flex flexDir="row" flexWrap="wrap" justify="space-between">
         <Box maxWidth="50%">
           <Heading as="h1" size="3xl" color="white" mb={10}>
             Converse com seus amigos com segurança.
